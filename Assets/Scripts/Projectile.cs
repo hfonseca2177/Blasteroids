@@ -6,8 +6,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 
-    [SerializeField] private Rigidbody rigidBody;
-    [SerializeField] private float speed = 1f;
+    [SerializeField] protected Rigidbody rigidBody;
+    [SerializeField] protected float speed = 1f;
     // Start is called before the first frame update
     void Start()
     {
