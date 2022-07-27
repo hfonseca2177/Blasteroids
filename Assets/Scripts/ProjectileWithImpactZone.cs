@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /*
@@ -8,55 +5,29 @@ using UnityEngine;
  */
 public class ProjectileWithImpactZone : Projectile
 {
-    // Start is called before the first frame update
-
-    [SerializeField] private float minScale = 1f;
-    [SerializeField] private float maxScale = 3f;
+    [Header("After how much time spawns the Impact Zone")]
     [SerializeField] private float triggerAt = 2f;
-    [SerializeField] private float duration = 10f;
+    [Header("Impact Zone prefab")]
     [SerializeField] private GameObject impactZone;
-
-    private float timeElapsed = 0;
-    private bool zoneUp;    
-    private GameObject instantiatedImpactZone;
-    private float currentScale;
-
+    private float _timeElapsed;
     
-
     // Update is called once per frame
     void Update()
     {
-        this.timeElapsed += Time.deltaTime;
+        _timeElapsed += Time.deltaTime;
+
+        if (!(_timeElapsed > triggerAt)) return;
         
-        if(timeElapsed > triggerAt && !zoneUp)
-        {
-            zoneUp = true;
-            SpawnImpactZone();            
-        }
-
-
-
-        if(timeElapsed > duration)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            MagnifyImpactZone();
-        }       
-
-        
+        SpawnImpactZone();
+        Destroy(gameObject);
     }
 
+    /**
+     * Instantiate impact zone at projectile current position
+     */
     private void SpawnImpactZone()
     {
-        instantiatedImpactZone = Instantiate(impactZone, this.transform);
+        Instantiate(impactZone, this.transform.localToWorldMatrix.GetPosition(), Quaternion.identity);
     }
-
-    private void MagnifyImpactZone()
-    {
-        instantiatedImpactZone.transform.localScale.Set(currentScale, currentScale,currentScale);
-    }
-
 
 }

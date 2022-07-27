@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd60b9c9023492d8eef063d1df4a8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: 50
+  input: 116
   projectilePrefab: {fileID: 4218250590220685007, guid: d71ce4f8463a46c42bd288af9604f19b, type: 3}
-  shootCooldown: 10
+  shootCooldown: 11
+  useLimit: 3
 --- !u!1 &760808040
 GameObject:
   m_ObjectHideFlags: 0

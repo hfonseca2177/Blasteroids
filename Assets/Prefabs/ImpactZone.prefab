@@ -4849,7 +4849,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492285404383168411}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c8bfd94fe300d94395adb737ce68a06, type: 3}
@@ -4951,6 +4951,7 @@ GameObject:
   - component: {fileID: 3443389241128503006}
   - component: {fileID: 3260021177437687428}
   - component: {fileID: 2858687094528373623}
+  - component: {fileID: 8006577736536687986}
   m_Layer: 5
   m_Name: ImpactZone
   m_TagString: Untagged
@@ -4967,8 +4968,8 @@ Transform:
   m_GameObject: {fileID: 4861640324705958222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.0000000018626}
-  m_LocalScale: {x: 2.5468, y: 2.5468, z: 2.5468}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5057164457619793325}
   m_Father: {fileID: 0}
@@ -5050,3 +5051,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applyDamageToTag: Asteroid
+--- !u!114 &8006577736536687986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4861640324705958222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7684786d1dd57d4790523b5f24b20f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleStep: 0.2
+  scaleInterval: 0.1
+  duration: 10
